@@ -1,0 +1,12 @@
+1) Clone repo: https://github.com/FlashBanistan/django-xen-signature.git
+2) Create and activate virtual environment
+3) Install dependencies: pip install -r requirements.txt
+4) Edit imagemagick xml file: sudo nano /etc/ImageMagick-6/policy.xml
+5) Find and comment out the following line: <!-- <policy domain="coder" rights="none" pattern="MVG" /> -->
+6) Find line:
+    <policy domain="coder" rights="none" pattern="PDF" />
+        change to
+    <policy domain="coder" rights="read|write" pattern="PDF" />
+7) Add line:
+    <policy domain="coder" rights="read|write" pattern="LABEL" />
+8) Restart server
